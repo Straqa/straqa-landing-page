@@ -6,15 +6,16 @@ export default function Hero(){
         <div className="w-full bg-[#F7F9FC]">
             <Header />
             <div className="text-center h-full px-[20px] py-[50px]">
-                <h1 className="text-4xl md:text-6xl font-semibold text-[#222D39] max-w-[1000px] mx-auto">AI-Powered Solutions to Grow, Manage, and Scale Your Business</h1>
-                <p className="text-[#8492A7] text-lg md:text-xl font-medium mt-5 md:mt-10">Everything you need to take your business online, boost sales, and manage operations—all in one platform.</p>
-                <div className="mx-auto mt-5 md:mt-10 w-fit">
+                <h1 className="text-4xl md:text-6xl font-semibold text-[#222D39] max-w-[1000px] mx-auto" data-aos="fade-up">AI-Powered Solutions to Grow, Manage, and Scale Your Business</h1>
+                <p className="text-[#8492A7] text-lg md:text-xl font-medium mt-5 md:mt-10" data-aos="fade-up">Everything you need to take your business online, boost sales, and manage operations—all in one platform.</p>
+                <div className="mx-auto mt-5 md:mt-10 w-fit" data-aos="fade-up" data-aos-delay="100">
                     <Button text="Secure Your Spot" />
                 </div>
                 <img
                     src="/images/straqa-dashboard.png"
                     alt="straqa-dashboard"
                     className="w-full md:max-w-[900px] mx-auto mt-10"
+                    data-aos="fade-up" data-aos-delay="200"
                 />
             </div>
         </div>

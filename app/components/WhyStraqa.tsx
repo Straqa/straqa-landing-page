@@ -46,7 +46,7 @@ export default function WhyStraqa(){
 
     const CardBlock = ({title, icon, subText }:{title: string, icon: string, subText: string}) => {
         return(
-            <div className="w-full h-fit">
+            <div className="w-full h-fit" data-aos="fade-up">
                 <div className="mx-auto w-[45px] h-[45px] flex items-center justify-center relative">
                     <img
                         src={icon}
@@ -63,8 +63,8 @@ export default function WhyStraqa(){
 
     return(
         <div className="w-full h-fit bg-white py-10 md:py-20 px-[20px] md:px-[50px] text-center text-[#222D39]">
-            <p className="font-semibold">WHY STRAQA</p>
-            <h2 className="text-2xl md:text-4xl font-semibold mt-5">Powerful Features to Help Your Business Sell, Scale, and Succeed</h2>
+            <p className="font-semibold" data-aos="fade-up">WHY STRAQA</p>
+            <h2 className="text-2xl md:text-4xl font-semibold mt-5" data-aos="fade-up">Powerful Features to Help Your Business Sell, Scale, and Succeed</h2>
             <div className="w-full mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10">
                 {reasons.map(({
                     title,

@@ -12,7 +12,7 @@ export default function Header(){
                 />
             </a>
             <div className="flex md:hidden items-center justify-end">
-                <Button text="Sign up" />
+                <Button text="Sign up" arrow />
             </div>
             <div className="hidden md:flex items-center justify-end text-[#222D39] text-lg font-medium gap-10">
                 <a href={paths.home}>Payments</a>
