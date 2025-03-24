@@ -47,7 +47,7 @@ export default function PaymentInfoSection(){
                         className="w-full"
                         data-aos="fade-down"
                     />
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-[3fr_5fr] gap-5">
                         <img
                             className="w-full"
                             alt=""
