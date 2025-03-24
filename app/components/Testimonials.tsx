@@ -4,7 +4,7 @@ export default function Testimonials(){
 
     const ReviewCard = () => {
         return(
-            <div className="w-full">
+            <div className="w-full" data-aos="fade-up">
                 <div>
                     <div className="w-full p-[35px] bg-[#F7F9FC] hover:bg-[#008AFF] space-y-5 text-[#222D39] hover:text-white duration-300 ease-in-out rounded-md">
                         <img
@@ -37,7 +37,7 @@ export default function Testimonials(){
                         <p className="font-semibold text-[#008AFF] capitalize">TESTIMONIALS</p>
                         <h3 className="text-2xl md:text-4xl font-semibold mt-5 text-[#222D39]">See What Others Have to Say About Us</h3>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="hidden md:flex items-center gap-4">
                         <div className="h-[50px] w-[50px] flex items-center justify-center text-white bg-[#020C14] opacity-30 rounded-md cursor-not-allowed">
                             <FaArrowLeftLong size={18} />
                         </div>
@@ -46,7 +46,7 @@ export default function Testimonials(){
                         </div>
                     </div>
                 </div>
-                <div className="w-full grid grid-cols-3 gap-5 mt-10 pt-5" data-aos="fade-up">
+                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 mt-10 pt-5">
                     <ReviewCard />
                     <ReviewCard />
                     <ReviewCard />

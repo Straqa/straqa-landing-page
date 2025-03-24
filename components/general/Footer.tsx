@@ -5,16 +5,14 @@ export default function Footer(){
     return(
         <div className="w-full bg-[#F7F9FC]">
             <div className="h-[200px] bg-white" />
-            <div className="max-w-[1200px] bg-[#020C14] mx-auto relative rounded-lg relative top-[-100px]">
-                <img
-                    src="/images/abstract-bg.svg"
-                    className="w-full h-full"
-                />
-                <div className="absolute top-0 left-0 h-full w-full px-[20px] md:px-[100px] flex items-center justify-between">
-                    <p className="text-2xl md:text-4xl text-white font-semibold max-w-[400px] leading-[130%] md:leading-[130%]">Be The First to Know When we Launch.</p>
-                    <div className="h-[55px] w-fit px-7 bg-white text-[#020C14] rounded-md text-base md:text-lg font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed">
-                        <p>Secure Your Spot</p>
-                        <FiChevronRight size={20} />
+            <div className="px-[20px]">
+                <div className="max-w-[1200px] bg-[#020C14] mx-auto relative rounded-lg relative top-[-100px] bg-center bg-cover bg-no-repeat" style={{backgroundImage: `url(/images/abstract-bg.svg)`}} data-aos="fade-up">
+                    <div className="h-full w-full px-[20px] md:px-[100px] py-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-5">
+                        <p className="text-2xl md:text-4xl text-white text-center md:text-left font-semibold max-w-[400px] leading-[130%] md:leading-[130%]">Be The First to Know When we Launch.</p>
+                        <div className="h-[55px] w-fit px-7 bg-white text-[#020C14] rounded-md text-base md:text-lg font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed">
+                            <p>Secure Your Spot</p>
+                            <FiChevronRight size={20} />
+                        </div>
                     </div>
                 </div>
             </div>

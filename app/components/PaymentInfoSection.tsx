@@ -22,7 +22,7 @@ export default function PaymentInfoSection(){
                 <p className="font-semibold text-[#008AFF]">STRAQA’S PAYMENTS SOLUTION</p>
                 <h3 className="text-2xl md:text-4xl font-semibold mt-5">Seamless Payments for Faster Business Growth</h3>
             </div>
-            <div className="max-w-[1200px] mt-10 mx-auto grid grid-cols-1 grid-cols-2 gap-10">
+            <div className="max-w-[1200px] mt-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-5 w-full">
                     <InfoCard
                         icon="/icons/options.svg"

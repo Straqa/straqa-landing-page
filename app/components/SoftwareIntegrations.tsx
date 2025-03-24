@@ -4,8 +4,8 @@ export default function SoftwareIntegrations(){
 
     const SoftwareCard = ({software, icon, industry, subText}:{software: string, icon: string, industry: string, subText: string}) => {
         return(
-            <div className="w-full bg-white p-[20px] p-[30px] space-y-4">
-                <div className="flex items-center gap-3">
+            <div className="w-full bg-white p-[15px] md:p-[30px] space-y-4" data-aos="fade-up">
+                <div className="flex flex-col md:flex-row md:items-center gap-3">
                     <img
                         src={icon}
                         alt={software + ' logo'}
@@ -29,7 +29,7 @@ export default function SoftwareIntegrations(){
                         <p className="font-semibold text-[#008AFF] uppercase">Software Integrations</p>
                         <h3 className="text-2xl md:text-4xl font-semibold mt-5 text-[#222D39]">Integrate with over 200+ Business Apps</h3>
                     </div>
-                    <div className="flex items-center gap-4 p-2 bg-white">
+                    <div className="hidden md:flex items-center gap-4 p-2 bg-white">
                         <div className="h-[50px] w-[50px] flex items-center justify-center text-[#020C14] opacity-40 rounded-md cursor-not-allowed">
                             <FaArrowLeftLong size={18} />
                         </div>
@@ -38,7 +38,7 @@ export default function SoftwareIntegrations(){
                         </div>
                     </div>
                 </div>
-                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-5 mt-10 pt-5" data-aos="fade-up">
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-5 mt-10 pt-5">
                     <SoftwareCard
                         icon="/images/softwares/intercom.svg"
                         industry="Software company"
