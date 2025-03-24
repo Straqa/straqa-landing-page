@@ -11,6 +11,7 @@ import WhyStraqa from "./components/WhyStraqa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Footer from "@/components/general/Footer";
+import PaymentInfoSection from "./components/PaymentInfoSection";
 
 export default function Home() {
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <WhyStraqa />
       <InfoSection />
+      <PaymentInfoSection />
       <Footer />
     </div>
   );
