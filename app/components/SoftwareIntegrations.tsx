@@ -4,8 +4,8 @@ export default function SoftwareIntegrations(){
 
     const SoftwareCard = ({software, icon, industry, subText}:{software: string, icon: string, industry: string, subText: string}) => {
         return(
-            <div className="w-full bg-white p-[15px] md:p-[30px] space-y-4" data-aos="fade-up">
-                <div className="flex flex-col md:flex-row md:items-center gap-3">
+            <div className="w-[75vw] md:w-full bg-white p-[15px] md:p-[30px] space-y-4" data-aos="fade-up">
+                <div className="flex flex-col flex-row items-center gap-3">
                     <img
                         src={icon}
                         alt={software + ' logo'}
@@ -22,12 +22,12 @@ export default function SoftwareIntegrations(){
     }
 
     return(
-        <div className="w-full bg-[#F7F9FC] px-[50px] py-10 md:py-20">
+        <div className="w-full bg-[#F7F9FC] py-20">
             <div className="max-w-[1200px] mx-auto">
-                <div className="flex items-end gap-2 justify-between" data-aos="fade-up">
-                    <div className="max-w-[500px] text-center md:text-left">
+                <div className="flex items-end gap-2 justify-between px-[20px] md:px-[50px]" data-aos="fade-up">
+                    <div className="w-full md:max-w-[500px] text-center md:text-left">
                         <p className="font-semibold text-[#008AFF] uppercase">Software Integrations</p>
-                        <h3 className="text-2xl md:text-4xl font-semibold mt-5 text-[#222D39]">Integrate with over 200+ Business Apps</h3>
+                        <h3 className="text-2xl md:text-4xl font-semibold mt-2 md:mt-5 text-[#222D39]">Integrate with over 200+ Business Apps</h3>
                     </div>
                     <div className="hidden md:flex items-center gap-4 p-2 bg-white">
                         <div className="h-[50px] w-[50px] flex items-center justify-center text-[#020C14] opacity-40 rounded-md cursor-not-allowed">
@@ -38,31 +38,33 @@ export default function SoftwareIntegrations(){
                         </div>
                     </div>
                 </div>
-                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-5 mt-10 pt-5">
-                    <SoftwareCard
-                        icon="/images/softwares/intercom.svg"
-                        industry="Software company"
-                        software="Intercom"
-                        subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                    />
-                    <SoftwareCard
-                        icon="/images/softwares/slack.svg"
-                        industry="Software company"
-                        software="Slack"
-                        subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                    />
-                    <SoftwareCard
-                        icon="/images/softwares/twillo.svg"
-                        industry="Software company"
-                        software="Twillo"
-                        subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                    />
-                    <SoftwareCard
-                        icon="/images/softwares/trello.svg"
-                        industry="Software company"
-                        software="Trello"
-                        subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                    />
+                <div className="w-full overflow-x-auto overflow-y-hidden px-[20px] md:px-[50px] pb-5">
+                    <div className="w-fit flex items-center flex-nowrap md:grid md:grid-cols-4 gap-5 mt-10 pt-5">
+                        <SoftwareCard
+                            icon="/images/softwares/intercom.svg"
+                            industry="Software company"
+                            software="Intercom"
+                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
+                        />
+                        <SoftwareCard
+                            icon="/images/softwares/slack.svg"
+                            industry="Software company"
+                            software="Slack"
+                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
+                        />
+                        <SoftwareCard
+                            icon="/images/softwares/twillo.svg"
+                            industry="Software company"
+                            software="Twillo"
+                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
+                        />
+                        <SoftwareCard
+                            icon="/images/softwares/trello.svg"
+                            industry="Software company"
+                            software="Trello"
+                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
+                        />
+                    </div>
                 </div>
             </div>
         </div>

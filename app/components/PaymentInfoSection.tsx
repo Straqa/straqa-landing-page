@@ -17,10 +17,10 @@ export default function PaymentInfoSection(){
     }
 
     return(
-        <div className="w-full min-h-screen bg-[#F7F9FC] px-[20px] py-10 md:py-20 mt-10 md:mt-20">
+        <div className="w-full min-h-screen bg-[#F7F9FC] px-[20px] py-20 mt-10 md:mt-20 overflow-x-hidden">
             <div className="mx-auto text-center max-w-[650px] text-black"  data-aos="fade-up">
                 <p className="font-semibold text-[#008AFF]">STRAQA’S PAYMENTS SOLUTION</p>
-                <h3 className="text-2xl md:text-4xl font-semibold mt-5">Seamless Payments for Faster Business Growth</h3>
+                <h3 className="text-2xl md:text-4xl font-semibold mt-2 md:mt-5">Seamless Payments for Faster Business Growth</h3>
             </div>
             <div className="max-w-[1200px] mt-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-5 w-full">
