@@ -1,10 +1,30 @@
+import { useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function SoftwareIntegrations(){
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+
+        const container = containerRef.current
+
+        let tl = gsap.timeline({defaults: {ease: "none"}})
+
+        tl.to(container, {
+            x: '-70%',
+            duration: 15,
+            repeat: -1,
+            yoyo: true,
+        })
+
+    }, {scope: containerRef})
+
 
     const SoftwareCard = ({software, icon, industry, subText}:{software: string, icon: string, industry: string, subText: string}) => {
         return(
-            <div className="w-[75vw] md:w-full bg-white p-[15px] md:p-[30px] space-y-4" data-aos="fade-up">
+            <div className="w-[75vw] md:w-[450px] bg-white p-[15px] md:p-[30px] space-y-4" data-aos="fade-up">
                 <div className="flex flex-col flex-row items-center gap-3">
                     <img
                         src={icon}
@@ -38,8 +58,8 @@ export default function SoftwareIntegrations(){
                         </div>
                     </div>
                 </div>
-                <div className="w-full overflow-x-auto overflow-y-hidden px-[20px] md:px-[50px] pb-5">
-                    <div className="w-fit flex items-center flex-nowrap md:grid md:grid-cols-4 gap-5 mt-10 pt-5">
+                <div className="w-full overflow-x-hidden overflow-y-hidden px-[20px] md:px-[50px] pb-5">
+                    <div className="w-fit flex items-center flex-nowrap gap-5 mt-10 pt-5" ref={containerRef}>
                         <SoftwareCard
                             icon="/images/softwares/intercom.svg"
                             industry="Software company"

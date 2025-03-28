@@ -1,10 +1,29 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 export default function Testimonials(){
+    const containerRef = useRef(null);
 
-    const ReviewCard = () => {
+    useGSAP(() => {
+
+        const container = containerRef.current
+
+        let tl = gsap.timeline({defaults: {ease: "none"}})
+
+        tl.to(container, {
+            x: '-80%',
+            duration: 15,
+            repeat: -1,
+            yoyo: true,
+        })
+
+    }, {scope: containerRef})
+
+    const ReviewCard = ({name, role, image}:{name: string, role: string, image: string}) => {
         return(
-            <div className="w-[75vw] md:w-full" data-aos="fade-up">
+            <div className="w-[75vw] md:w-[500px]" data-aos="fade-up">
                 <div>
                     <div className="w-full p-[35px] bg-[#F7F9FC] hover:bg-[#008AFF] space-y-5 text-[#222D39] hover:text-white duration-300 ease-in-out rounded-md">
                         <img
@@ -14,15 +33,15 @@ export default function Testimonials(){
                         <p className=" ">Lorem Ipsum is a simply dummy text of an the printing and type settings for has been the industry's standard dumy text the ever since unknown printer.</p>
                     </div>
                 </div>
-                <div className="px-[30px] flex items-center gap-5 mt-5">
+                <div className="px-[20px] flex items-center gap-3 mt-5">
                     <img
-                        src="/images/portrait.jpeg"
+                        src={image}
                         alt=""
-                        className="h-[35px] w-[35px] rounded-full"
+                        className="h-[35px] w-[35px] rounded-full object-cover"
                     />
                     <div>
-                        <h4 className="text-lg md:text-xl font-semibold text-[#222D39]">Felix Ayodeji</h4>
-                        <p className="text-[#008AFF] font-medium">Video Editor</p>
+                        <h4 className="text-lg md:text-xl font-semibold text-[#222D39]">{name}</h4>
+                        <p className="text-[#008AFF] font-medium">{role}</p>
                     </div>
                 </div>
             </div>
@@ -46,11 +65,33 @@ export default function Testimonials(){
                         </div>
                     </div>
                 </div>
-                <div className="w-full overflow-x-auto overflow-y-hidden px-[20px] md:px-[50px] pb-5">
-                    <div className="w-fit flex items-center flex-nowrap md:grid md:grid-cols-3 gap-5 mt-10 pt-5">
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
+                <div className="w-full overflow-x-hidden overflow-y-hidden px-[20px] md:px-[50px] pb-5">
+                    <div className="w-fit flex items-center flex-nowrap gap-5 mt-10 pt-5" ref={containerRef}>
+                        <ReviewCard
+                            name="Tunde Bamidele"
+                            role="CTO"
+                            image="/images/portraits/user-2.jpeg"
+                        />
+                        <ReviewCard
+                            name="Usman Danjuma"
+                            role="Product Manager"
+                            image="/images/portraits/user-1.jpeg"
+                        />
+                        <ReviewCard
+                            name="Obinna Nwachukwu"
+                            role="Marketing Lead"
+                            image="/images/portraits/user-3.jpeg"
+                        />
+                        <ReviewCard
+                            name="Tochukwu Umeh"
+                            role="Head of Engineering"
+                            image="/images/portraits/user-5.jpeg"
+                        />
+                        <ReviewCard
+                            name="Musa Abdullahi"
+                            role="Finance Officer"
+                            image="/images/portraits/user-4.jpeg"
+                        />
                     </div>
                 </div>
             </div>
