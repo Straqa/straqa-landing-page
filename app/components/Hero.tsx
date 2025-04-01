@@ -12,7 +12,7 @@ export default function Hero(){
                     <Button text="Secure Your Spot" />
                 </div>
                 <img
-                    src="/images/straqa-dashboard.png"
+                    src="/images/straqa-dashboard.svg"
                     alt="straqa-dashboard"
                     className="w-full md:max-w-[900px] mx-auto mt-10"
                     data-aos="fade-up" data-aos-delay="200"

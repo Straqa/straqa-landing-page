@@ -21,7 +21,7 @@ export default function Testimonials(){
 
     }, {scope: containerRef})
 
-    const ReviewCard = ({name, role, image}:{name: string, role: string, image: string}) => {
+    const ReviewCard = ({name, role, image, review}:{name: string, role: string, image: string, review: string}) => {
         return(
             <div className="w-[75vw] md:w-[500px]" data-aos="fade-up">
                 <div>
@@ -30,7 +30,7 @@ export default function Testimonials(){
                             src="/icons/quote.svg"
                             alt=""
                         />
-                        <p className=" ">Lorem Ipsum is a simply dummy text of an the printing and type settings for has been the industry's standard dumy text the ever since unknown printer.</p>
+                        <p className=" ">{review}</p>
                     </div>
                 </div>
                 <div className="px-[20px] flex items-center gap-3 mt-5">
@@ -68,29 +68,22 @@ export default function Testimonials(){
                 <div className="w-full overflow-x-hidden overflow-y-hidden px-[20px] md:px-[50px] pb-5">
                     <div className="w-fit flex items-center flex-nowrap gap-5 mt-10 pt-5" ref={containerRef}>
                         <ReviewCard
-                            name="Tunde Bamidele"
-                            role="CTO"
+                            name="Stephen"
+                            role="Business Owner"
                             image="/images/portraits/user-2.jpeg"
+                            review="Straqa streamlined our data and payment processes, saving us time and uncovering valuable insights!"
                         />
                         <ReviewCard
-                            name="Usman Danjuma"
-                            role="Product Manager"
+                            name="David"
+                            role="Business Owner"
                             image="/images/portraits/user-1.jpeg"
+                            review="Straqa streamlined our data and payment processes, saving us time and uncovering valuable insights!"
                         />
                         <ReviewCard
-                            name="Obinna Nwachukwu"
-                            role="Marketing Lead"
-                            image="/images/portraits/user-3.jpeg"
-                        />
-                        <ReviewCard
-                            name="Tochukwu Umeh"
-                            role="Head of Engineering"
-                            image="/images/portraits/user-5.jpeg"
-                        />
-                        <ReviewCard
-                            name="Musa Abdullahi"
-                            role="Finance Officer"
-                            image="/images/portraits/user-4.jpeg"
+                            name="Cynthia"
+                            role="Business Owner"
+                            image="/images/portraits/cynthia.png"
+                            review="Straqa streamlined our data and payment processes, saving us time and uncovering valuable insights!"
                         />
                     </div>
                 </div>

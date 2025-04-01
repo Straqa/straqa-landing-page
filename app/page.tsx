@@ -14,6 +14,7 @@ import SoftwareIntegrations from "./components/SoftwareIntegrations";
 //aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import CourselSection from "./components/CourselSection";
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full bg-white">
       <Hero />
+      <CourselSection />
       <WhyStraqa />
       <InfoSection />
       <PaymentInfoSection />

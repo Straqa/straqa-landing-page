@@ -36,7 +36,7 @@ export default function SoftwareIntegrations(){
                         <p className="text-[#008AFF] font-medium">{industry}</p>
                     </div>
                 </div>
-                <p className="font-medium text-[#8492A7]">{subText}</p>
+                {/* <p className="font-medium text-[#8492A7]">{subText}</p> */}
             </div>
         )
     }
@@ -47,7 +47,7 @@ export default function SoftwareIntegrations(){
                 <div className="flex items-end gap-2 justify-between px-[20px] md:px-[50px]" data-aos="fade-up">
                     <div className="w-full md:max-w-[500px] text-center md:text-left">
                         <p className="font-semibold text-[#008AFF] uppercase">Software Integrations</p>
-                        <h3 className="text-2xl md:text-4xl font-semibold mt-2 md:mt-5 text-[#222D39]">Integrate with over 200+ Business Apps</h3>
+                        <h3 className="text-2xl md:text-4xl font-semibold mt-2 md:mt-5 text-[#222D39]">Integrate with your favorite business tools.</h3>
                     </div>
                     <div className="hidden md:flex items-center gap-4 p-2 bg-white">
                         <div className="h-[50px] w-[50px] flex items-center justify-center text-[#020C14] opacity-40 rounded-md cursor-not-allowed">
