@@ -53,12 +53,13 @@ export default function Footer(){
                         </div>
                     </div>
                 </div>
-                <div className="max-w-[1200px] px-[20px] mx-auto border-t border-black/10 mt-10 pt-10">
-                    <div className="flex items-center gap-3 text-[#8492A7]">
+                <div className="max-w-[1200px] px-[20px] mx-auto border-t border-black/10 mt-10 pt-10 flex flex-col md:flex-row items-center justify-between">
+                    <div className="flex items-center j gap-5 text-[#8492A7]">
                         <a href="https://www.linkedin.com/company/straqahq/" target="_blank"><FaLinkedin size={25} /></a>
                         <a href="https://x.com/straqahq?s=21" target="_blank"><FaXTwitter size={25} /></a>
                         <a href="https://www.instagram.com/straqahq?igsh=MXducGtkZXk1MjN6eA%3D%3D&utm_source=qr" target="_blank"><FaInstagram size={25} /></a>
                     </div>
+                    <p className="text-black/50 mt-5 md:mt-0">© 2020 Straqa. All rights reserved</p>
                 </div>
             </div>
         </div>
