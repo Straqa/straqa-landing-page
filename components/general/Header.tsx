@@ -23,11 +23,11 @@ export default function Header(){
                     </div>
                 </div>
                 <div className="hidden md:flex items-center justify-end text-[#222D39] text-lg font-medium gap-10">
-                    <a href={paths.home}>Payments</a>
+                    {/* <a href={paths.home}>Payments</a>
                     <a href={paths.home}>Events</a>
-                    <a href={paths.home}>eCommerce</a>
-                    <a href={paths.home}>Contact</a>
-                    <Button text="Sign up" />
+                    <a href={paths.home}>eCommerce</a> */}
+                    <a href={paths.home}>Contact us</a>
+                    <Button text="Sign up" arrow />
                 </div>
             </div>
             {showDrawer && <SideDrawer showDrawer={showDrawer} handleClose={() => setShowDrawer(false)} />}

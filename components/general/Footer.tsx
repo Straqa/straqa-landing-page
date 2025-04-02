@@ -1,5 +1,7 @@
 import { paths } from "@/constants/paths";
 import { FiChevronRight } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer(){
     return(
@@ -27,6 +29,35 @@ export default function Footer(){
                             />
                         </a>
                         <p className="text-base md:text-lg text-[#8492A7] font-medium mt-3">Everything you need to take your business online, boost sales, and manage operations—all in one platform.</p>
+                    </div>
+                    <div className="w-full grid grid-cols-2 gap-5">
+                        <div className="w-full">
+                            <h3 className="text-black text-xl">Company</h3>
+                            <div className="mt-5 space-y-2 text-[#8492A7] flex flex-col gap-2">
+                                <a href="#">About Us</a>
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Contact Us</a>
+                            </div>
+                        </div>
+                        <div className="w-full">
+                            <h3 className="text-black text-xl">Join The VIPs</h3>
+                            <p className="text-[#8492A7] mt-5">Sign up and be the first to use Straqa when we launch</p>
+                            <div className="space-y-4 mt-5">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your mail"
+                                    className="w-full h-[50px] bg-white rounded-md px-[15px] text-black/80"
+                                />
+                                <button className="text-white bg-[#020C14] rounded-md w-full h-[50px] font-medium">Subscribe Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="max-w-[1200px] px-[20px] mx-auto border-t border-black/10 mt-10 pt-10">
+                    <div className="flex items-center gap-3 text-[#8492A7]">
+                        <a href="https://www.linkedin.com/company/straqahq/" target="_blank"><FaLinkedin size={25} /></a>
+                        <a href="https://x.com/straqahq?s=21" target="_blank"><FaXTwitter size={25} /></a>
+                        <a href="https://www.instagram.com/straqahq?igsh=MXducGtkZXk1MjN6eA%3D%3D&utm_source=qr" target="_blank"><FaInstagram size={25} /></a>
                     </div>
                 </div>
             </div>

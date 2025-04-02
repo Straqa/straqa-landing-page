@@ -11,7 +11,7 @@ export default function CourselSection(){
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % 4);
-        }, 65000);
+        }, 5000);
 
         return () => clearInterval(interval);
       }, []);

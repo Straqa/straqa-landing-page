@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { integratedSoftwares } from "@/constants/integratedSoftwares";
 
 export default function SoftwareIntegrations(){
     const containerRef = useRef(null);
@@ -22,7 +23,7 @@ export default function SoftwareIntegrations(){
     }, {scope: containerRef})
 
 
-    const SoftwareCard = ({software, icon, industry, subText}:{software: string, icon: string, industry: string, subText: string}) => {
+    const SoftwareCard = ({software, icon, industry}:{software: string, icon: string, industry: string}) => {
         return(
             <div className="w-[75vw] md:w-[450px] bg-white p-[15px] md:p-[30px] space-y-4" data-aos="fade-up">
                 <div className="flex flex-col flex-row items-center gap-3">
@@ -60,30 +61,15 @@ export default function SoftwareIntegrations(){
                 </div>
                 <div className="w-full overflow-x-hidden overflow-y-hidden px-[20px] md:px-[50px] pb-5">
                     <div className="w-fit flex items-center flex-nowrap gap-5 mt-10 pt-5" ref={containerRef}>
-                        <SoftwareCard
-                            icon="/images/softwares/intercom.svg"
-                            industry="Software company"
-                            software="Intercom"
-                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                        />
-                        <SoftwareCard
-                            icon="/images/softwares/slack.svg"
-                            industry="Software company"
-                            software="Slack"
-                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                        />
-                        <SoftwareCard
-                            icon="/images/softwares/twillo.svg"
-                            industry="Software company"
-                            software="Twillo"
-                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                        />
-                        <SoftwareCard
-                            icon="/images/softwares/trello.svg"
-                            industry="Software company"
-                            software="Trello"
-                            subText="Lorem ipsum dolo sit ametui consectetur adipiscing elied. Tortor tristique quam eratus consectetur vivam."
-                        />
+                        {integratedSoftwares.map((software, index) => (
+                            <SoftwareCard
+                                icon={software.icon}
+                                industry={software.industry}
+                                software={software.software}
+                                key={index}
+                            />
+                        ))}
+                        
                     </div>
                 </div>
             </div>

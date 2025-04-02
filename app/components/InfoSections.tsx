@@ -61,7 +61,7 @@ export default function InfoSection(){
             <div className="w-full bg-white py-10 px-[20px]">
                 <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <img
-                        src="/images/infoSection-2.svg"
+                        src="/images/infoSection-2.png"
                         data-aos="fade-up" data-aos-delay="200"
                     />
                     <div className="w-full" data-aos="fade-up">

@@ -29,12 +29,12 @@ export default function SideDrawer({handleClose, showDrawer}: {handleClose: () =
                                 </div>
                             </div>
                             <div className="w-full h-full pt-10 flex flex-col gap-7 text-center text-[#222D39]">
-                                <a href={paths.home} className="text-lg font-medium">Payments</a>
+                                {/* <a href={paths.home} className="text-lg font-medium">Payments</a>
                                 <a href={paths.home} className="text-lg font-medium">Events</a>
-                                <a href={paths.home} className="text-lg font-medium">eCommerce</a>
+                                <a href={paths.home} className="text-lg font-medium">eCommerce</a> */}
                                 <a href={paths.home} className="text-lg font-medium">Contact</a>
                                 <div className="h-[55px] w-full px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed">
-                                    <p>Join Waitlist</p>
+                                    <p>Sign Up</p>
                                     <FiChevronRight size={20} />
                                 </div>
                             </div>
