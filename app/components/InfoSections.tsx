@@ -1,4 +1,5 @@
 import Button from "@/components/general/Button";
+import Image from "next/image";
 import { FaCircleCheck } from "react-icons/fa6";
 
 export default function InfoSection(){
@@ -52,15 +53,17 @@ export default function InfoSection(){
                         </div>
                         <Button text="Learn more" arrow />
                     </div>
-                    <img
-                        src="/images/infoSection-3.svg"
-                        data-aos="fade-up" data-aos-delay="200"
-                    />
+                    <Image
+                        src="/images/infoSection3.svg"
+                        data-aos="fade-up" data-aos-delay="200" alt={""}  width={500} height={500}                  />
                 </div>
             </div>
             <div className="w-full bg-white py-10 px-[20px]">
                 <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <img
+                    <Image
+                        alt={""}
+                        width={500} height={500}
+                        className="w-full"
                         src="/images/infoSection-2.png"
                         data-aos="fade-up" data-aos-delay="200"
                     />

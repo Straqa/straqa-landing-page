@@ -50,14 +50,14 @@ export default function SoftwareIntegrations(){
                         <p className="font-semibold text-[#008AFF] uppercase">Software Integrations</p>
                         <h3 className="text-2xl md:text-4xl font-semibold mt-2 md:mt-5 text-[#222D39]">Integrate with your favorite business tools.</h3>
                     </div>
-                    <div className="hidden md:flex items-center gap-4 p-2 bg-white">
+                    {/* <div className="hidden md:flex items-center gap-4 p-2 bg-white">
                         <div className="h-[50px] w-[50px] flex items-center justify-center text-[#020C14] opacity-40 rounded-md cursor-not-allowed">
                             <FaArrowLeftLong size={18} />
                         </div>
                         <div className="h-[50px] w-[50px] flex items-center justify-center text-white bg-[#020C14] rounded-md cursor-pointer">
                             <FaArrowRightLong size={18} />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="w-full overflow-x-hidden overflow-y-hidden px-[20px] md:px-[50px] pb-5">
                     <div className="w-fit flex items-center flex-nowrap gap-5 mt-10 pt-5" ref={containerRef}>
