@@ -19,7 +19,7 @@ export default function CourselSection(){
 
 
     return(
-        <div className="w-full h-[450px] h-[600px] bg-black relative">
+        <div className="w-full h-[450px] overflow-hidden bg-black relative">
             <AnimatePresence>
                 {coursel[activeIndex] && (
                     <motion.div 

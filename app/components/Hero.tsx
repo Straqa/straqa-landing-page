@@ -91,7 +91,7 @@ export default function Hero() {
           <Image
             src="/images/background.svg"
             alt="straqa-dashboard"
-            className="w-full mx-auto md:max-w-[950px] hidden md:block absolute top-20 left-[18rem] z-0"
+            className="w-full mx-auto md:max-w-[950px] hidden lg:block absolute top-20 left-[18rem] z-0"
             data-aos="fade-up"
             data-aos-delay="200"
             width={1000}
