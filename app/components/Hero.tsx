@@ -23,8 +23,7 @@ export default function Hero() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const airtableUrl =
-      "https://api.airtable.com/v0/YOUR_BASE_ID/YOUR_TABLE_NAME";
+    const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_URL;
     const apiKey = "YOUR_API_KEY";
     const data = {
       fields: {
@@ -34,6 +33,11 @@ export default function Hero() {
     };
 
     try {
+      if (!airtableUrl) {
+        toast.error("Airtable URL is not configured. Please contact support.");
+        return;
+      }
+
       const response = await fetch(airtableUrl, {
         method: "POST",
         headers: {
@@ -91,7 +95,7 @@ export default function Hero() {
           <Image
             src="/images/background.svg"
             alt="straqa-dashboard"
-            className="w-full mx-auto md:max-w-[950px] hidden lg:block absolute top-20 left-[18rem] z-0"
+            className="w-full mx-auto md:max-w-[950px] hidden lg:block absolute lg:top-20 lg:left-[2rem] xl:left-[18rem]  z-0"
             data-aos="fade-up"
             data-aos-delay="200"
             width={1000}

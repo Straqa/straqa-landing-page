@@ -35,10 +35,10 @@ export default function CourselSection(){
                                 <h1 className="text-3xl md:text-5xl font-semibold text-white">{coursel[activeIndex].title}</h1>
                                 <p className="text-[#667185] text-lg md:text-2xl font-medium text-white max-w-[850px]">{coursel[activeIndex].subText}</p>
                             </div>
-                            <div className="text-white text-2xl hidden md:flex flex-col gap-3 cursor-pointer">
+                            {/* <div className="text-white text-2xl hidden md:flex flex-col gap-3 cursor-pointer">
                                 <FaArrowRight />
                                 <FaArrowLeft />
-                            </div>
+                            </div> */}
                         </div>
                     </motion.div>
                 )}
