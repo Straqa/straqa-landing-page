@@ -56,7 +56,7 @@ export default function Footer({ openModal }: { openModal: () => void }) {
                         <a href="https://x.com/straqahq?s=21" target="_blank"><FaXTwitter size={25} /></a>
                         <a href="https://www.instagram.com/straqahq?igsh=MXducGtkZXk1MjN6eA%3D%3D&utm_source=qr" target="_blank"><FaInstagram size={25} /></a>
                     </div>
-                    <p className="text-black/50 mt-5 md:mt-0">© 2020 Straqa. All rights reserved</p>
+                    <p className="text-black/50 mt-5 md:mt-0">© 2025 Straqa. All rights reserved</p>
                 </div>
             </div>
             
