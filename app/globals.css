@@ -29,7 +29,7 @@ body {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* Keep the overlay semi-transparent */
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,18 +37,19 @@ body {
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.8); /* Make the form background semi-transparent */
+  background: rgba(255, 255, 255, 1); 
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 90%;
-  max-width: 400px;
+  max-width: 840px;
+ height: 530px;
 }
 
 .modal-content button {
   position: absolute;
-  top: 0.5rem; /* Position the close button inside the form */
+  top: 0.5rem; 
   right: 0.5rem;
   background: transparent;
   border: none;
