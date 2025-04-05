@@ -84,13 +84,13 @@ export default function Hero() {
         </div>
         <div className="relative">
           <Image
-            src="/images/straqa-dashboard.svg"
+            src="/images/Hero.png"
             alt="straqa-dashboard"
             className="w-full md:max-w-[900px] mx-auto mt-10 relative z-10"
             data-aos="fade-up"
             data-aos-delay="200"
-            width={1000}
-            height={1000}
+            width={5000}
+            height={100}
           />
           <Image
             src="/images/background.svg"
