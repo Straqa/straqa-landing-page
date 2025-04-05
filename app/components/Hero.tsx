@@ -1,9 +1,6 @@
-import Button from "@/components/general/Button";
+"use client";
 import Header from "@/components/general/Header";
 import Image from "next/image";
-import { useState } from "react";
-import useTimeout from "../hooks/useTimeout";
-import Modal from "@/components/general/Modal";
 
 export default function Hero({ openModal }: { openModal: () => void }) {
  

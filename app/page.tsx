@@ -44,7 +44,7 @@ export default function Home() {
     e.preventDefault();
 
     const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_URL;
-    const apiKey = "YOUR_API_KEY";
+    const apiKey = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
     const data = {
       fields: {
         Email: email,
