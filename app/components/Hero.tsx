@@ -25,7 +25,7 @@ export default function Hero() {
 
     const airtableUrl =
       "https://api.airtable.com/v0/YOUR_BASE_ID/YOUR_TABLE_NAME";
-    const apiKey = "YOUR_API_KEY"; 
+    const apiKey = "YOUR_API_KEY";
     const data = {
       fields: {
         Email: email,
@@ -105,7 +105,10 @@ export default function Hero() {
           <h2 className="text-2xl md:text-4xl font-bold text-[#8492A7] max-w-[500px] text-center">
             Be the first to know when we launch.
           </h2>
-          <form  onSubmit={handleSubmit} className="flex flex-col items-center w-full  gap-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col items-center w-full  gap-y-4"
+          >
             <input
               type="email"
               placeholder="Enter your email address"
@@ -120,7 +123,12 @@ export default function Hero() {
               onChange={(e) => setReason(e.target.value)}
               className="w-full py-6 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black placeholder:text-[#8492A76E] focus:outline-none focus:ring-2 focus:ring-black"
             />
-            <Button text={"Secure Your Spot"} />
+            <div
+              onClick={handleSubmit}
+              className="h-[55px] w-fit px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+            >
+              <p>Secure Your Spot</p>
+            </div>
           </form>
           <p className="text-[#00000099] italic text-center text-sm md:text-base">
             *If you can’t find our mail in your inbox, please check your spam or
