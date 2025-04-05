@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 //components
 import Hero from "./components/Hero";
@@ -11,28 +11,136 @@ import PaymentInfoSection from "./components/PaymentInfoSection";
 import Testimonials from "./components/Testimonials";
 import SoftwareIntegrations from "./components/SoftwareIntegrations";
 
-//aos
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import CourselSection from "./components/CourselSection";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+//aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+import CourselSection from "./components/CourselSection";
+import Modal from "@/components/general/Modal";
+import useTimeout from "./hooks/useTimeout";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hasModalShown, setHasModalShown] = useState(false);
+  const [email, setEmail] = useState("");
+  const [reason, setReason] = useState("");
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
-    AOS.init()
-  }, [])
+    AOS.init();
+  }, []);
+
+  useTimeout(() => {
+    if (!hasModalShown) {
+      setIsModalOpen(true);
+      setHasModalShown(true);
+    }
+  }, 5000);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_URL;
+    const apiKey = "YOUR_API_KEY";
+    const data = {
+      fields: {
+        Email: email,
+        Reason: reason,
+      },
+    };
+
+    try {
+      if (!airtableUrl) {
+        toast.error("Airtable URL is not configured. Please contact support.");
+        return;
+      }
+
+      const response = await fetch(airtableUrl, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Form submitted successfully!");
+        setEmail("");
+        setReason("");
+      } else {
+        toast.error("Failed to submit the form. Please try again.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
+  };
 
   return (
     <div className="min-h-screen w-full bg-white">
-      <Hero />
+      <Hero openModal={openModal} />
       <CourselSection />
       <WhyStraqa />
       <InfoSection />
       <PaymentInfoSection />
       <Testimonials />
       <SoftwareIntegrations />
-      <Footer />
+      <Footer openModal={openModal} />
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="flex flex-col items-center justify-center h-full w-full px-6 gap-y-6 py-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#8492A7] max-w-[500px] text-center">
+            Be the first to know when we launch.
+          </h2>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col items-center w-full  gap-y-4"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full py-6 border border-[#3434340D] rounded text-center md:text-xl text-black placeholder:text-[#8492A76E] focus:outline-none focus:ring-2 focus:ring-black"
+            />
+            <select
+              value={reason}
+              onChange={(e) => setReason(e.target.value)}
+              className="w-full py-6 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black focus:outline-none focus:ring-2 focus:ring-black"
+            >
+              <option value="" disabled>
+              I want to use Straqa for...
+              </option>
+              <option value="Build and Manage an Online Store">
+                Build and Manage an Online Store
+              </option>
+              <option value="Sell and Manage Event Tickets">
+                Sell and Manage Event Tickets
+              </option>
+              <option value="Receive Payments">Receive Payments</option>
+              <option value="Build a Transport/Logistics System">
+                Build a Transport/Logistics System
+              </option>
+              <option value="I'm not sure yet">I'm not sure yet</option>
+            </select>
+            <div
+              onClick={handleSubmit}
+              className="h-[55px] w-fit px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+            >
+              <p>Secure Your Spot</p>
+            </div>
+          </form>
+          <p className="text-[#00000099] italic text-center text-sm md:text-base">
+            *If you can’t find our mail in your inbox, please check your spam or
+            promotions folder.
+          </p>
+        </div>
+      </Modal>
+      <ToastContainer />
     </div>
   );
 }

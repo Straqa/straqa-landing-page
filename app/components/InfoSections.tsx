@@ -54,7 +54,7 @@ export default function InfoSection(){
                         <Button text="Learn more" arrow />
                     </div>
                     <Image
-                        src="/images/infoSection3.svg"
+                        src="/images/infoLaptop.jpg"
                         data-aos="fade-up" data-aos-delay="200" alt={""}  width={500} height={500}                  />
                 </div>
             </div>
