@@ -26,6 +26,7 @@ export default function Home() {
   const [hasModalShown, setHasModalShown] = useState(false);
   const [email, setEmail] = useState("");
   const [reason, setReason] = useState("");
+  const [fullName, setfullName] = useState("")
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -40,45 +41,74 @@ export default function Home() {
     }
   }, 5000);
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_URL;
+  //   const apiKey = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
+  //   const data = {
+  //     fields: {
+  //       Email: email,
+  //       Reason: reason,
+  //     },
+  //   };
+
+  //   try {
+  //     if (!airtableUrl || !apiKey) {
+  //       toast.error('Airtable URL or API key is not configured. Please contact support.');
+  //       return;
+  //     }
+
+  //     const response = await fetch(airtableUrl, {
+  //       method: "POST",
+  //       headers: {
+  //         Authorization: `Bearer ${apiKey}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+
+  //     if (response.ok) {
+  //       toast.success("Form submitted successfully!");
+  //       setEmail("");
+  //       setReason("");
+  //     } else {
+  //       toast.error("Failed to submit the form. Please try again.");
+  //     }
+  //   } catch (error) {
+  //     toast.error("An error occurred. Please try again.");
+  //   }
+  // };
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_URL;
-    const apiKey = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
     const data = {
-      fields: {
-        Email: email,
-        Reason: reason,
-      },
+      fullName,
+      email,
+      reason,
     };
 
     try {
-      if (!airtableUrl) {
-        toast.error("Airtable URL is not configured. Please contact support.");
-        return;
-      }
-
-      const response = await fetch(airtableUrl, {
-        method: "POST",
+      const response = await fetch('/api/airtable', {
+        method: 'POST',
         headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
       if (response.ok) {
-        toast.success("Form submitted successfully!");
-        setEmail("");
-        setReason("");
+        console.log('Record created:', result);
       } else {
-        toast.error("Failed to submit the form. Please try again.");
+        console.error('Error:', result);
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.");
+      console.error('Error:', error);
     }
   };
-
   return (
     <div className="min-h-screen w-full bg-white">
       <Hero openModal={openModal} />
@@ -100,6 +130,13 @@ export default function Home() {
             onSubmit={handleSubmit}
             className="flex flex-col items-center w-full  gap-y-4"
           >
+           <input
+              type="name"
+              placeholder="Enter your Full Name"
+              value={fullName}
+              onChange={(e) => setfullName(e.target.value)}
+              className="w-full py-6 border border-[#3434340D] rounded text-center md:text-xl text-black placeholder:text-[#8492A76E] focus:outline-none focus:ring-2 focus:ring-black"
+            />
             <input
               type="email"
               placeholder="Enter your email address"
