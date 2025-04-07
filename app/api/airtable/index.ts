@@ -2,9 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import Airtable from 'airtable';
 
 // Directly assigning the values you provided for testing
-const AIRTABLE_API_KEY = "patMlcSP5EMwNjGxD.e856eb8cd24a65b4bd916bad73570946dd8011577cf85dc1bd5d16b61fef4f2e";
-const AIRTABLE_BASE_ID = "appgy25uEospimmQ6";
-const AIRTABLE_TABLE_NAME = "Table 1";
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || '';
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || '';
+const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || 'Table 1';
 
 // Initialize Airtable with API key and base ID
 const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_ID);
