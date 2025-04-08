@@ -42,46 +42,7 @@ export default function Home() {
     }
   }, 5000);
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
 
-  //   const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_URL;
-  //   const apiKey = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
-  //   const data = {
-  //     fields: {
-  //       Email: email,
-  //       Reason: reason,
-  //     },
-  //   };
-
-  //   try {
-  //     if (!airtableUrl || !apiKey) {
-  //       toast.error('Airtable URL or API key is not configured. Please contact support.');
-  //       return;
-  //     }
-
-  //     const response = await fetch(airtableUrl, {
-  //       method: "POST",
-  //       headers: {
-  //         Authorization: `Bearer ${apiKey}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(data),
-  //     });
-
-  //     if (response.ok) {
-  //       toast.success("Form submitted successfully!");
-  //       setEmail("");
-  //       setReason("");
-  //     } else {
-  //       toast.error("Failed to submit the form. Please try again.");
-  //     }
-  //   } catch (error) {
-  //     toast.error("An error occurred. Please try again.");
-  //   }
-  // };
-
-  
 
 
   const handleSubmit = async (e: React.FormEvent) => {
