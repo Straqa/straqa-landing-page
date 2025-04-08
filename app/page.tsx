@@ -20,12 +20,13 @@ import "aos/dist/aos.css";
 import CourselSection from "./components/CourselSection";
 import Modal from "@/components/general/Modal";
 import useTimeout from "./hooks/useTimeout";
+import { createAirtableRecord } from "./api/airtable";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hasModalShown, setHasModalShown] = useState(false);
   const [email, setEmail] = useState("");
-  const [reason, setReason] = useState("");
+  const [useCase, setUseCase] = useState("");
   const [fullName, setfullName] = useState("")
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -82,34 +83,19 @@ export default function Home() {
 
 
   const handleSubmit = async (e: React.FormEvent) => {
-    debugger
     e.preventDefault();
 
-    const data = {
-      fullName,
-      email,
-      reason,
-    };
-
     try {
-      const response = await fetch('/api/airtable', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-      if (response.ok) {
-        console.log('Record created:', result);
-      } else {
-        console.error('Error:', result);
-      }
+      await createAirtableRecord(fullName, email, useCase);
+      toast.success("Form submitted successfully!");
+      setfullName("");
+      setEmail("");
+      setUseCase("");
     } catch (error) {
-      console.error('Error:', error);
+      toast.error("Failed to submit the form. Please try again.");
     }
   };
+
   return (
     <div className="min-h-screen w-full bg-white">
       <Hero openModal={openModal} />
@@ -146,8 +132,8 @@ export default function Home() {
               className="w-full py-6 border border-[#3434340D] rounded text-center md:text-xl text-black placeholder:text-[#8492A76E] focus:outline-none focus:ring-2 focus:ring-black"
             />
             <select
-              value={reason}
-              onChange={(e) => setReason(e.target.value)}
+              value={useCase}
+              onChange={(e) => setUseCase(e.target.value)}
               className="w-full py-6 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black focus:outline-none focus:ring-2 focus:ring-black"
             >
               <option value="" disabled>

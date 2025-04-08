@@ -13,7 +13,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
         <div className="modal-overlay"  data-aos="fade-up">
             <div className="modal-content z-20 ">
                 <button
-                    className="absolute top-6 right-12 text-gray-500 hover:text-gray-800"
+                    className="absolute text-gray-500 hover:text-gray-800"
                     onClick={onClose}
                 >
                     ✕

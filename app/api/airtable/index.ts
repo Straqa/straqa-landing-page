@@ -1,34 +1,40 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import Airtable from 'airtable';
+export async function createAirtableRecord(fullName: string, email: string, useCase: string) {
+  const airtableUrl = process.env.NEXT_PUBLIC_AIRTABLE_API_URL;
+  const apiKey = process.env.NEXT_PUBLIC_AIRTABLE_API_KEY;
 
-// Directly assigning the values you provided for testing
-const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY || '';
-const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || '';
-const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || 'Table 1';
+  if (!airtableUrl || !apiKey) {
+    throw new Error("Airtable API URL or API Key is not defined in environment variables.");
+  }
 
-// Initialize Airtable with API key and base ID
-const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_ID);
+  const data = {
+    fields: {
+      'Full Name': fullName,
+      'Email Address': email,
+      'Use-Case': useCase,
+    },
+  };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
-    const { fullName, email, useCase } = req.body;
+  try {
+    const response = await fetch(airtableUrl, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-    try {
-      const records = await base(AIRTABLE_TABLE_NAME).create([
-        {
-          fields: {
-            'Full Name': fullName,
-            'Email Address': email,
-            'Use-Case': useCase,
-          },
-        },
-      ]);
-      return res.status(200).json({ message: 'Record created', records });
-    } catch (err) {
-      console.error('Error creating Airtable record:', err);
-      return res.status(500).json({ error: 'Failed to create record', details: err });
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Error creating Airtable record:", errorData);
+      throw new Error("Failed to create Airtable record.");
     }
-  } else {
-    return res.status(405).json({ error: 'Method Not Allowed' });
+
+    const responseData = await response.json();
+    console.log("Airtable record created successfully:", responseData);
+    return responseData;
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
   }
 }
