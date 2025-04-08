@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/video',
+        source: '/demo',
         destination: 'https://youtu.be/QPx52UNhkRc', 
         permanent: false,
       },
