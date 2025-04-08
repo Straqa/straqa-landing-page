@@ -81,6 +81,8 @@ export default function Home() {
   //   }
   // };
 
+  
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,6 +95,7 @@ export default function Home() {
       setUseCase("");
     } catch (error) {
       toast.error("Failed to submit the form. Please try again.");
+      console.log(error)
     }
   };
 
