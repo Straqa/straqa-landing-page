@@ -27,7 +27,7 @@ export default function Home() {
   const [hasModalShown, setHasModalShown] = useState(false);
   const [email, setEmail] = useState("");
   const [useCase, setUseCase] = useState("");
-  const [fullName, setfullName] = useState("")
+  const [fullName, setfullName] = useState("");
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -42,9 +42,6 @@ export default function Home() {
     }
   }, 5000);
 
-
-
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -56,7 +53,7 @@ export default function Home() {
       setUseCase("");
     } catch (error) {
       toast.error("Failed to submit the form. Please try again.");
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -81,7 +78,7 @@ export default function Home() {
             onSubmit={handleSubmit}
             className="flex flex-col items-center w-full  gap-y-4"
           >
-           <input
+            <input
               type="name"
               placeholder="Enter your Full Name"
               value={fullName}
@@ -98,10 +95,10 @@ export default function Home() {
             <select
               value={useCase}
               onChange={(e) => setUseCase(e.target.value)}
-              className="w-full py-6 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full max-w-md mx-auto py-3 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black focus:outline-none focus:ring-2 focus:ring-black"
             >
               <option value="" disabled>
-              I want to use Straqa for...
+                I want to use Straqa for...
               </option>
               <option value="Build and Manage an Online Store">
                 Build and Manage an Online Store
@@ -115,6 +112,7 @@ export default function Home() {
               </option>
               <option value="I'm not sure yet">I'm not sure yet</option>
             </select>
+
             <div
               onClick={handleSubmit}
               className="h-[55px] w-fit px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
