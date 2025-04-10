@@ -61,3 +61,11 @@ body {
 .modal-content button:hover {
   color: #000;
 }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+  text-align-last: center;
+}
