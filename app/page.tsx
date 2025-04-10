@@ -95,7 +95,7 @@ export default function Home() {
             <select
               value={useCase}
               onChange={(e) => setUseCase(e.target.value)}
-              className="w-full py-6 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full mx-auto py-6 mb-4 border border-[#3434340D] rounded text-center md:text-xl text-black focus:outline-none focus:ring-2 focus:ring-black"
 
             >
               <option value="" disabled>
