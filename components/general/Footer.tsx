@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Footer({ openModal }: { openModal: () => void }) {
     return(
-        <div className="w-full bg-[#F7F9FC]">
+        <div  id="contactUs" className="w-full bg-[#F7F9FC]">
             <div className="h-[200px] bg-white" />
             <div className="px-[20px]">
                 <div className="max-w-[1200px] bg-[#020C14] mx-auto rounded-lg relative top-[-100px] bg-center bg-cover bg-no-repeat" style={{backgroundImage: `url(/images/abstract-bg.svg)`}} data-aos="fade-up">

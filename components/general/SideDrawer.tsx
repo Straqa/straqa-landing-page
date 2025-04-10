@@ -3,9 +3,9 @@ import { FiChevronRight, FiX } from "react-icons/fi";
 import Button from "./Button";
 import { AnimatePresence, motion } from "motion/react";
 
-export default function SideDrawer({handleClose, showDrawer}: {handleClose: () => void, showDrawer: boolean}){
+export default function SideDrawer({handleClose, showDrawer, openModal}: {handleClose: () => void, showDrawer: boolean, openModal: () => void}) {
     return(
-        <div className="h-screen w-full fixed top-0 left-0 z-[1000] bg-black/30 backdrop-blur-sm flex">
+        <div className="h-screen w-full fixed top-0 left-0 z-[500] bg-black/30 backdrop-blur-sm flex">
             <div className="h-full flex-1" onClick={handleClose}/>
             <div className="p-[10px]">
                 <AnimatePresence>
@@ -32,8 +32,8 @@ export default function SideDrawer({handleClose, showDrawer}: {handleClose: () =
                                 {/* <a href={paths.home} className="text-lg font-medium">Payments</a>
                                 <a href={paths.home} className="text-lg font-medium">Events</a>
                                 <a href={paths.home} className="text-lg font-medium">eCommerce</a> */}
-                                <a href={paths.home} className="text-lg font-medium">Contact</a>
-                                <div className="h-[55px] w-full px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed">
+                                <a href="#contactUs" onClick={handleClose} className="text-lg font-medium">Contact</a>
+                                <div onClick={() => { openModal(); handleClose(); }} className="h-[55px] w-full px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed">
                                     <p>Sign Up</p>
                                     <FiChevronRight size={20} />
                                 </div>

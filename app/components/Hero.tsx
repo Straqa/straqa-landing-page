@@ -7,7 +7,7 @@ export default function Hero({ openModal }: { openModal: () => void }) {
 
   return (
     <div className="w-full bg-[#F7F9FC]">
-      <Header />
+      <Header openModal={openModal} />
       <div className="text-center h-full px-[20px] py-[50px]">
         <h1
           className="text-4xl md:text-6xl font-semibold text-[#222D39] max-w-[1000px] mx-auto"

@@ -69,3 +69,7 @@ select {
   text-align: center;
   text-align-last: center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
