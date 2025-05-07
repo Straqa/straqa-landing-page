@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
           Straqa Technologies <br />
           Email: support@straqa.com <br />
           Phone: +234 905 155 5542 <br />
-          Address: [Insert physical office address]
+          Address: 16/18 Chief Nsirim Road , Off Ikwerre Road, Rumueme, Port Harcourt,  Rivers state, Nigeria.
         </p>
       </section>
     </main>
