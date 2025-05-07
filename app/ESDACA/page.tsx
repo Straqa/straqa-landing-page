@@ -1,6 +1,7 @@
 // app/e-sign-consent/page.tsx
 export default function ESignConsentPage() {
   return (
+<div className="bg-white w-screen">
     <main className="max-w-3xl mx-auto px-4 py-12 text-gray-800">
       <h1 className="text-3xl font-bold mb-4">
         Electronic Signature Disclosure and Consent Agreement
@@ -103,6 +104,7 @@ export default function ESignConsentPage() {
         </p>
       </section>
     </main>
+</div>
   );
 }
 

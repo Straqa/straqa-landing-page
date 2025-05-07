@@ -1,6 +1,7 @@
 export default function TermsOfUsePage() {
   return (
-    <div className="bg-white text-gray-800 px-4 py-10 max-w-3xl mx-auto">
+<div className="bg-white w-screen">
+    <main className="text-gray-800 px-4 py-10 max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold text-center mb-4">STRAQA LIMITED – TERMS OF USE</h1>
       <p className="text-center text-sm text-gray-500 mb-10">Effective Date: May 7, 2025</p>
 
@@ -115,6 +116,7 @@ www.straqa.com`,
           </div>
         ))}
       </section>
+</main>
     </div>
   );
 }

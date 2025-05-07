@@ -1,6 +1,7 @@
 // app/privacy-policy/page.tsx
 export default function PrivacyPolicyPage() {
   return (
+<div className="bg-white w-screen">
     <main className="max-w-3xl mx-auto px-4 py-12 text-gray-800">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
       <p className="text-sm text-gray-500 mb-8">
@@ -122,6 +123,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </section>
     </main>
+</div>
   );
 }
 
