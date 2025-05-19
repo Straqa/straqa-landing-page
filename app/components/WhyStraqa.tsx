@@ -62,35 +62,35 @@ export default function WhyStraqa() {
     subText: string;
   }) => {
     return (
-      <div className="w-full h-fit" data-aos="fade-up">
-        <div className="mx-auto w-[45px] h-[45px] flex items-center justify-center relative">
+      <div className='w-full h-fit' data-aos='fade-up'>
+        <div className='mx-auto w-[45px] h-[45px] flex items-center justify-center relative'>
           <Image
             width={500}
             height={500}
             src={icon}
             alt={title}
-            className="h-full z-[11]"
+            className='h-full z-[11]'
           />
-          <div className="h-[40px] w-[40px] rounded-full absolute bg-[#EBF6FF] top-0 left-0 z-[10]" />
+          <div className='h-[40px] w-[40px] rounded-full absolute bg-[#EBF6FF] top-0 left-0 z-[10]' />
         </div>
-        <h4 className="text-lg md:text-2xl font-semibold mt-5">{title}</h4>
-        <p className="text-[#8492A7] text-base mt-2">{subText}</p>
+        <h4 className='text-lg md:text-2xl font-semibold mt-5'>{title}</h4>
+        <p className='text-[#8492A7] text-base mt-2'>{subText}</p>
       </div>
     );
   };
 
   return (
-    <div className="w-full h-fit bg-white py-10 md:py-20 px-[20px] md:px-[50px] text-center text-[#222D39]">
-      <p className="font-semibold" data-aos="fade-up">
+    <div className='container mx-auto w-full h-fit bg-white py-10 md:py-20 px-[20px] md:px-[50px] text-center text-[#222D39]'>
+      <p className='font-semibold' data-aos='fade-up'>
         WHY STRAQA
       </p>
       <h2
-        className="text-2xl md:text-4xl font-semibold mt-2 md:mt-5"
-        data-aos="fade-up"
+        className='text-2xl md:text-4xl font-semibold mt-2 md:mt-5'
+        data-aos='fade-up'
       >
         Powerful Features to Help Your Business Sell, Scale, and Succeed
       </h2>
-      <div className="w-full mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 md:gap-10">
+      <div className='w-full mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 md:gap-10'>
         {reasons.map(({ title, icon, subText }, index) => (
           <CardBlock key={index} icon={icon} title={title} subText={subText} />
         ))}
