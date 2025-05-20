@@ -52,7 +52,7 @@ export default function Footer({ openModal }: { openModal: () => void }) {
               </div>
               <div className='flex items-center gap-2'>
                 <FaPhone />
-                <a href='tel:+2349051555642'>+2349051555642</a>
+                <a href='tel:+2349051555542'>+2349051555542</a>
               </div>
             </div>
           </div>
