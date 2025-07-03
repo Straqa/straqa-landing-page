@@ -72,7 +72,7 @@ export default function Home() {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="flex flex-col items-center justify-center h-full w-full px-6 gap-y-6 py-6">
           <h2 className="text-2xl md:text-4xl font-bold text-[#8492A7] max-w-[500px] text-center">
-            Be the first to know when we launch.
+            Book a demo with us.
           </h2>
           <form
             onSubmit={handleSubmit}
@@ -118,7 +118,7 @@ export default function Home() {
               onClick={handleSubmit}
               className="h-[55px] w-fit px-7 bg-[#020C14] rounded-md text-base md:text-lg text-white font-medium flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
             >
-              <p>Secure Your Spot</p>
+              <p>Book now</p>
             </div>
           </form>
           <p className="text-[#00000099] italic text-center text-sm md:text-base">
